@@ -1,0 +1,51 @@
+{% extends 'basefile.html' %}
+{% block head %}
+<style>
+
+    div {
+        margin: 1px;
+        border-width: 1px;
+        padding: 1px;
+    }
+    #welcome {
+        background-color: darkgrey;
+        border-style: solid;
+        padding: 30px;
+    }
+
+    #ulnavg {
+        list-style-type: none;
+        margin: 0;
+        border-width: 2px;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+    }
+</style>
+{% endblock %}
+{% block homepage %}
+    <div class="row">
+    {% for item in items %}
+        <div class="column">
+            <img src="{{ 'static/'+item.item }}", style="width:150x;height: 75%">
+            <h4 style="width: 50%;height: 25%;float: left;padding-left: 20px">{{ item.itemname }}</h4>
+            <h4 style="width: 50%;height: 25%;float: left;padding-left:20px">{{ item.itemid }}</h4>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href='static/basecss.css'>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div>
+    <div id="welcome">
+        <h1 align="center">Welcome</h1>
+    </div>
+    <div>
+        <ul id="ulnavg">
+            <li><a class="active" href="{{ url_for('mod_ui.home_page') }}">Home</a></li>
+            <li><a class="active" href="{{ url_for('mod_data.shop_list') }}">Shop</a></li>
+            <li><a class="active" href="#cart">Cart</a></li>
+        </ul>
+    </div>
+
+    {% block homepage %}
+    {% endblock %}
+</div>
+</body>
+</html>

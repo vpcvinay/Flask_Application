@@ -1,0 +1,18 @@
+{
+  "prod1": {
+    "name": "iphone7",
+    "image": "iphone7.png"
+  },
+  "prod2": {
+    "name": "iphone11",
+    "image": "iphone11.png"
+  },
+  "prod3": {
+    "name": "MotoZ",
+    "image" : "MotoZ.png"
+  },
+  "prod4": {
+    "name": "OnePlus 7T Pro",
+    "image": "OnePlus-7T-Pro.png"
+  }
+}

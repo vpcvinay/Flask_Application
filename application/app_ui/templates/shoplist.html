@@ -1,0 +1,23 @@
+{% extends 'basefile.html' %}
+{% block head %}
+<link rel="stylesheet", href="static/shoplist.css">
+{% endblock %}
+{% block homepage %}
+    <table>
+        <tr>
+            <th>itemid</th>
+            <th>itemname</th>
+            <th>Item</th>
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.itemid }}</td>
+                <td>{{ item.itemname}}</td>
+                <td>
+                    <img src="{{ "static/pictures/"+item.item }}", style="width: 100px;height: 100px;padding:15px">
+                    Item
+                </td>
+        {% endfor %}
+        </tr>
+    </table>
+{% endblock %}
