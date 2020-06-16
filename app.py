@@ -1,5 +1,4 @@
 from config import Config
-import table_create as tbl_cr
 
 import json
 import sys
@@ -26,6 +25,7 @@ if __name__=='__main__':
         Config.host = data['db_host']
         Config.db_name = data['db_name']
         from application import app
+        import table_create as tbl_cr
         tbl_cr.create_table()
         tbl_cr.data_populate()
         app.run(debug=True, host=host_conf['host'], port=host_conf['port'])

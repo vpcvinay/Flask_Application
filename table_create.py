@@ -1,6 +1,7 @@
 import psycopg2
 import sys
 import json
+from application import Config
 
 def create_table():
     tables = ['''create table shopping_list (itemid serial not null primary key,itemname varchar(50) not null,item varchar(50));''']
@@ -64,7 +65,7 @@ def drop_table():
 
 
 if __name__=="__main__":
-    conn = psycopg2.connect(host="192.168.99.100", database='vinaydb', user='postgres', password='vinay')
+    conn = psycopg2.connect(host=Config.host, database=Config.db, user=Config.user, password=Config.password)
     cur = conn.cursor()
     conn.autocommit = True
     for arg in sys.argv[1:]:
@@ -83,5 +84,10 @@ if __name__=="__main__":
     conn.commit()
     conn.close()
 
+elif __name__!="__main__":
+    print(Config.host)
+    conn = psycopg2.connect(host=Config.host, database=Config.db_name, user=Config.user, password=Config.password)
+    cur = conn.cursor()
+    conn.autocommit = True
 
 
